@@ -94,8 +94,8 @@
                 <a class="nav-link" href="#">Playlist</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" id="form-value">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"id="search-value">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
@@ -222,5 +222,23 @@ Follow us on our social  media platforms
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+function search(event){
+event.preventDefault();
+let inputValue=document.querySelector("#search-value");
+let artistName=inputValue.value
+
+
+let h1=document.querySelector("h1");
+h1.innerHTML=`${artistName}`
+}
+
+
+    const form=document.querySelector("#form-value");
+    form.addEventListener("submit", search);
+</script>
+
+
+
 </body>
 </html>
